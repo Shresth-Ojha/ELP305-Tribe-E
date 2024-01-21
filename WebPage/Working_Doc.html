@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>8bc3bc7cd6e3466ebf26ec3657688c9e</title>
+  <link rel="stylesheet" href="styles.css">
+  <script
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+  type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<div class="center">
+  <hr />
+  <div class="bfseries" style="display: flex; flex-direction: column; align-items: center;">
+    <img src="../Images/iitd_logo.png" style="width: 1in; margin: auto;" alt="image" />
+    <p style="text-align: center;">
+      <span>DESIGN OF SYSTEMS LAB </span><br />
+      <em>Prof. Subrat Kar</em> [ELP305] <br>
+      <br>
+      <!-- </p>
+                    <p > -->
+      Cloth Cleaning Machine Requirements Document<br />
+    <p>(Version 1.4.0)</p><br />
+    Submission by Tribe - E<br />
+    <p>21-01-2024</p><br />
+    </p>
+  </div>
+</div>
+<div id="version-details">
+
+  <p>
+    <strong>Version Details</strong>:
+    <em>Format ‘<strong>m.n</strong>’
+      <span class="math inline">\(\rightarrow\)</span> m is last week
+      submission example 1st or 2nd, n is the last m.(n-1) version
+      plus 1</em>
+  </p>
+  <ul>
+    <li>
+      <p>Version 1.0 (Multiple people): Created all .tex files.</p>
+    </li>
+    <li>
+      <p>
+        Version 1.1 (Aniruddha Chatterjee) : Edited
+        Pages/Members.tex
+      </p>
+    </li>
+    <li>
+      <p>Version 1.2 (Hardik Varshney) : Edited WorkingDoc.Tex</p>
+    </li>
+    <li>
+      <p>Version 1.3 (mt1210232) : Edited Pages/Members.tex</p>
+    </li>
+    <li>
+      <p>Version 1.4 (Multiple People): Edited WorkingDoc.tex</p>
+    </li>
+    <li>
+      <p>Version 1.5 (Adnaan Mansoor): Edited Appendices.tex</p>
+    </li>
+    <li>
+      <p>Version 1.6 (mt1210232) : Edited WorkingDoc.tex</p>
+    </li>
+    <li>
+      <p>Version 1.7 (Shresth Ojha) : Edited Members.tex</p>
+    </li>
+    <li>
+      <p>Version 1.8 Siddharth Gupta : Edited Specifications.tex</p>
+    </li>
+    <li>
+      <p>Version 1.9 (Shreyash Bhilwade) : Edited WorkingDoc.tex</p>
+    </li>
+    <li>
+      <p>Version 1.9 (Shresth Ojha) : Edited Specifications.tex</p>
+    </li>
+  </ul>
+</div>
+
+<div id="table-of-contents">
+
+  <h2>Contents</h2>
+
+  <ol>
+    <li>
+      <a href="#section1">Tribe Members Information</a>
+      <div class="line"></div>
+      <span style="float: right;">5</span>
+    </li>
+    <li>
+      <a href="#section2">Mind Map</a>
+      <div class="line"></div>
+      <span style="float: right;">7</span>
+    </li>
+    <li>
+      <a href="#section3">Project Management Details</a>
+      <div class="line"></div>
+      <span style="float: right;">9</span>
+      <ol>
+        <li>
+          <a href="#section3-1">Gantt Chart</a>
+          <div class="line"></div>
+          <span style="float: right;">9</span>
+        </li>
+        <li>
+          <a href="#section3-2">Network Chart</a>
+          <div class="line"></div>
+          <span style="float: right;">10</span>
+        </li>
+        <li>
+          <a href="#section3-3">RBS</a>
+          <div class="line"></div>
+          <span style="float: right;">10</span>
+        </li>
+        <li>
+          <a href="#section3-4">WBS</a>
+          <div class="line"></div>
+          <span style="float: right;">11</span>
+        </li>
+      </ol>
+    </li>
+    <li>
+      <a href="#section4">Motivation</a>
+      <div class="line"></div>
+      <span style="float: right;">12</span>
+    </li>
+    <li>
+      <a href="#section5">Requirements</a>
+      <div class="line"></div>
+      <span style="float: right;">12</span>
+      <ol>
+        <li>
+          <a href="#section5-1">Problem Statement</a>
+          <div class="line"></div>
+          <span style="float: right;">12</span>
+        </li>
+        <li>
+          <a href="#section5-2">Input Requirements</a>
+          <div class="line"></div>
+          <span style="float: right;">12</span>
+          <ul>
+            <li>
+              <a href="#section5-2-1">Cloth Details</a>
+              <div class="line"></div>
+              <span style="float: right;">12</span>
+            </li>
+            <li>
+              <a href="#section5-2-2">Other inputs</a>
+              <div class="line"></div>
+              <span style="float: right;">12</span>
+            </li>
+            <li>
+              <a href="#section5-2-3">Mode of Input</a>
+              <div class="line"></div>
+              <span style="float: right;">13</span>
+            </li>
+          </ul>
+        </li>
+        <!-- Repeat for other subsections -->
+      </ol>
+    </li>
+    <li>
+      <a href="#section6">Specifications</a>
+      <div class="line"></div>
+      <span style="float: right;">14</span>
+      <ol>
+        <li>
+          <a href="#section6-1">Machine Block Diagram</a>
+          <div class="line"></div>
+          <span style="float: right;">14</span>
+        </li>
+        <li>
+          <a href="#section6-2">Solvent Chamber</a>
+          <div class="line"></div>
+          <span style="float: right;">14</span>
+          <ul>
+            <li>
+              <a href="#section6-2-1">Energy Specifications</a>
+              <div class="line"></div>
+              <span style="float: right;">14</span>
+            </li>
+            <li>
+              <a href="#section6-2-2">Space Specifications</a>
+              <div class="line"></div>
+              <span style="float: right;">14</span>
+            </li>
+            <li>
+              <a href="#section6-2-3">Power Specifications</a>
+              <div class="line"></div>
+              <span style="float: right;">14</span>
+            </li>
+            <li>
+              <a href="#section6-2-4">Cost Specifications</a>
+              <div class="line"></div>
+              <span style="float: right;">14</span>
+            </li>
+            <li>
+              <a href="#section6-2-5">Performance Specifications</a>
+              <div class="line"></div>
+              <span style="float: right;">14</span>
+            </li>
+            <li>
+              <a href="#section6-2-6">Man Power Specifications</a>
+              <div class="line"></div>
+              <span style="float: right;">15</span>
+            </li>
+            <li>
+              <a href="#section6-2-7">Milestone Specifications</a>
+              <div class="line"></div>
+              <span style="float: right;">15</span>
+            </li>
+          </ul>
+        </li>
+        <!-- Repeat for other subsections -->
+      </ol>
+    </li>
+    <li>
+      <a href="#sectionA">Appendix</a>
+      <div class="line"></div>
+      <span style="float: right;">18</span>
+      <ol>
+        <li>
+          <a href="#sectionA-1">Document ID</a>
+          <div class="line"></div>
+          <span style="float: right;">18</span>
+        </li>
+        <li>
+          <a href="#sectionA-2">Document Statistics</a>
+          <div class="line"></div>
+          <span style="float: right;">18</span>
+        </li>
+        <li>
+          <a href="#sectionA-3">Readability Indices</a>
+          <div class="line"></div>
+          <span style="float: right;">19</span>
+          <ul>
+            <li>
+              <a href="#sectionA-3-1">Descriptions of the various indices</a>
+              <div class="line"></div>
+              <span style="float: right;">19</span>
+            </li>
+          </ul>
+        </li>
+        <!-- Repeat for other subsections -->
+      </ol>
+    </li>
+  </ol>
+</div>
+<h1 id="tribe-members-information">Tribe Members Information</h1>
+<div class="longtable">
+<p><span>|P<span>1.1cm</span>|P<span>4.5cm</span>|P<span>5.0cm</span>|P<span>3cm</span>|P<span>0.7cm</span>|</span>
+<strong>S.No.</strong> &amp; <strong>Name</strong> &amp;
+<strong>Email</strong> &amp; <strong>Role</strong> &amp;
+<strong>IF</strong><br />
+</p>
+<p><span><strong>Table  – Continued from previous
+page</strong></span><br />
+<strong>S.No.</strong> &amp; <strong>Name</strong> &amp;
+<strong>Email</strong> &amp; <strong>Role</strong> &amp;
+<strong>IF</strong><br />
+</p>
+<p>1 &amp; Samarth Singla &amp; <a href="/cdn-cgi/l/email-protection#c3aeb7f5f1f2f3faf7f183aea2b7abb0edaaaab7a7eda2a0edaaad"><span class="__cf_email__" data-cfemail="076a73313536373e3335476a66736f74296e6e7363296664296e69">[email&#160;protected]</span></a>
+&amp; Tribe Coordinator &amp; 1<br />
+&amp; Tarun Gupta &amp; <a href="/cdn-cgi/l/email-protection#fb9e9ec8c9cacbcfc3c9bb9e9ed592928f9fd59a98d59295"><span class="__cf_email__" data-cfemail="bedbdb8d8c8f8e8a868cfedbdb90d7d7cada90dfdd90d7d0">[email&#160;protected]</span></a> &amp;
+Associate Tribe Coordinator &amp; 1<br />
+&amp; Mihit Sharma &amp; <a href="/cdn-cgi/l/email-protection#553030666764656265621530307b3c3c21317b34367b3c3b"><span class="__cf_email__" data-cfemail="b9dcdc8a8b88898e898ef9dcdc97d0d0cddd97d8da97d0d7">[email&#160;protected]</span></a> &amp;
+Associate Tribe Coordinator &amp; 1<br />
+&amp; Akshat Chaudhary &amp; <a href="/cdn-cgi/l/email-protection#97fae3a1a5a6a7afa6a3d7faf6e3ffe4b9fefee3f3b9f6f4b9fef9"><span class="__cf_email__" data-cfemail="f59881c3c7c4c5cdc4c1b59894819d86db9c9c8191db9496db9c9b">[email&#160;protected]</span></a>
+&amp; Activity Coordinator &amp; 1<br />
+&amp; Ronak Kalvani &amp; <a href="/cdn-cgi/l/email-protection#97fae3a1a5a6a7aea2a5d7faf6e3ffe4b9fefee3f3b9f6f4b9fef9"><span class="__cf_email__" data-cfemail="610c1557535051585453210c001509124f080815054f00024f080f">[email&#160;protected]</span></a>
+&amp; Member &amp; 1<br />
+&amp; Shailesh Saini &amp; <a href="/cdn-cgi/l/email-protection#fe938acfcccfcec7cccbbe939f8a968dd097978a9ad09f9dd09790"><span class="__cf_email__" data-cfemail="1d70692c2f2c2d242f285d707c69756e3374746979337c7e337473">[email&#160;protected]</span></a>
+&amp; Member &amp; 1<br />
+&amp; Abhirashi Singh &amp; <a href="/cdn-cgi/l/email-protection#a9cccc989b98999f9d9fe9cccc87c0c0ddcd87c8ca87c0c7"><span class="__cf_email__" data-cfemail="dcb9b9edeeedeceae8ea9cb9b9f2b5b5a8b8f2bdbff2b5b2">[email&#160;protected]</span></a> &amp;
+Member &amp; 1<br />
+&amp; Himanshi Barsker &amp; <a href="/cdn-cgi/l/email-protection#4e233a7f7c7f7e777c770e232f3a263d6027273a2a602f2d602720"><span class="__cf_email__" data-cfemail="1f726b2e2d2e2f262d265f727e6b776c3176766b7b317e7c317671">[email&#160;protected]</span></a>
+&amp; Member &amp; 1<br />
+&amp; Aditya Raj &amp; <a href="/cdn-cgi/l/email-protection#e28f96d3d0d3d2d0d4d0a28f83968a91cc8b8b9686cc8381cc8b8c"><span class="__cf_email__" data-cfemail="eb869fdad9dadbd9ddd9ab868a9f8398c582829f8fc58a88c58285">[email&#160;protected]</span></a>
+&amp; Member &amp; 1<br />
+&amp; Aditya Raj &amp; <a href="/cdn-cgi/l/email-protection#563b2267646766646064163b37223e25783f3f2232783735783f38"><span class="__cf_email__" data-cfemail="3e534a0f0c0f0e0c080c7e535f4a564d1057574a5a105f5d105750">[email&#160;protected]</span></a>
+&amp; Member &amp; 1<br />
+&amp; Surya Pratap Singh &amp; <a href="/cdn-cgi/l/email-protection#92ffe6a3a0a3a2a0a6aad2fff3e6fae1bcfbfbe6f6bcf3f1bcfbfc"><span class="__cf_email__" data-cfemail="d9b4ade8ebe8e9ebede199b4b8adb1aaf7b0b0adbdf7b8baf7b0b7">[email&#160;protected]</span></a>
+&amp; Member &amp; 1<br />
+&amp; Komal Gumma &amp; <a href="/cdn-cgi/l/email-protection#ddb8b8ecefecedebeaea9db8b8f3b4b4a9b9f3bcbef3b4b3"><span class="__cf_email__" data-cfemail="1d78782c2f2c2d2b2a2a5d78783374746979337c7e337473">[email&#160;protected]</span></a> &amp;
+Member &amp; 1<br />
+&amp; Rashmi &amp; <a href="/cdn-cgi/l/email-protection#e8859cd9dad9d8d1dbdca885899c809bc681819c8cc6898bc68186"><span class="__cf_email__" data-cfemail="8fe2fbbebdbebfb6bcbbcfe2eefbe7fca1e6e6fbeba1eeeca1e6e1">[email&#160;protected]</span></a>
+&amp; Member &amp; 1<br />
+&amp; Madhav Manish Gulati &amp; <a href="/cdn-cgi/l/email-protection#5732326665666766646e173232793e3e2333793634793e39"><span class="__cf_email__" data-cfemail="b3d6d68281828382808af3d6d69ddadac7d79dd2d09ddadd">[email&#160;protected]</span></a> &amp;
+Activity Coordinator &amp; 1<br />
+&amp; Nihar Patel &amp; <a href="/cdn-cgi/l/email-protection#49243d787b78797170790924283d213a6720203d2d67282a672027"><span class="__cf_email__" data-cfemail="94f9e0a5a6a5a4acada4d4f9f5e0fce7bafdfde0f0baf5f7bafdfa">[email&#160;protected]</span></a>
+&amp; Member &amp; 1<br />
+&amp; Jamith Kaur &amp; <a href="/cdn-cgi/l/email-protection#5b362f6d696a6b626e6a1b363a2f33287532322f3f753a38753235"><span class="__cf_email__" data-cfemail="f49980c2c6c5c4cdc1c5b49995809c87da9d9d8090da9597da9d9a">[email&#160;protected]</span></a>
+&amp; Member &amp; 1<br />
+&amp; Saket Kandoi &amp; <a href="/cdn-cgi/l/email-protection#533e2765616263616566133e32273b207d3a3a27377d32307d3a3d"><span class="__cf_email__" data-cfemail="137e6725212223212526537e72677b603d7a7a67773d72703d7a7d">[email&#160;protected]</span></a>
+&amp; Member &amp; 1<br />
+&amp; Yash Sajjansingh Chavan &amp; <a href="/cdn-cgi/l/email-protection#d4b9a0e2e6e5e4ede2e294b9b5a0bca7fabdbda0b0fab5b7fabdba"><span class="__cf_email__" data-cfemail="b8d5cc8e8a8988818e8ef8d5d9ccd0cb96d1d1ccdc96d9db96d1d6">[email&#160;protected]</span></a>
+&amp; Member &amp; 1<br />
+&amp; Aniruddha Chatterjee &amp; <a href="/cdn-cgi/l/email-protection#a7cad3969596979f9e91e7cac6d3cfd489ceced3c389c6c489cec9"><span class="__cf_email__" data-cfemail="84e9f0b5b6b5b4bcbdb2c4e9e5f0ecf7aaededf0e0aae5e7aaedea">[email&#160;protected]</span></a>
+&amp; Member &amp; 1<br />
+&amp; Dipshika Karmalkar &amp; <a href="/cdn-cgi/l/email-protection#2d48481e1f1c1d1a181e6d48480344445949034c4e034443"><span class="__cf_email__" data-cfemail="9affffa9a8abaaadafa9daffffb4f3f3eefeb4fbf9b4f3f4">[email&#160;protected]</span></a> &amp;
+Member &amp; 1<br />
+&amp; Ananmay Gupta &amp; <a href="/cdn-cgi/l/email-protection#a1ccd590939091999895e1ccc0d5c9d28fc8c8d5c58fc0c28fc8cf"><span class="__cf_email__" data-cfemail="3a574e0b080b0a02030e7a575b4e52491453534e5e145b59145354">[email&#160;protected]</span></a>
+&amp; Member &amp; 1<br />
+&amp; Abhishek Kumar &amp; <a href="/cdn-cgi/l/email-protection#95f8e1a3a7a4a5aca0a2d5f8f4e1fde6bbfcfce1f1bbf4f6bbfcfb"><span class="__cf_email__" data-cfemail="0a677e3c383b3a333f3d4a676b7e62792463637e6e246b69246364">[email&#160;protected]</span></a>
+&amp; Member &amp; 1<br />
+&amp; M Bhavya &amp; <a href="/cdn-cgi/l/email-protection#caafaffbf8fbfafcfef28aafafe4a3a3beaee4aba9e4a3a4"><span class="__cf_email__" data-cfemail="ea8f8fdbd8dbdadcded2aa8f8fc483839e8ec48b89c48384">[email&#160;protected]</span></a> &amp;
+Member &amp; 1<br />
+&amp; Satwik Kumar &amp; <a href="/cdn-cgi/l/email-protection#f9948dc8cbc8c9cecdc9b994988d918ad790908d9dd7989ad79097"><span class="__cf_email__" data-cfemail="45283174777475727175052824312d366b2c2c31216b24266b2c2b">[email&#160;protected]</span></a>
+&amp; Member &amp; 1<br />
+&amp; Ankit Mukherjee &amp; <a href="/cdn-cgi/l/email-protection#bedbdb8d8c8f8e8c8e87fedbdb90d7d7cada90dfdd90d7d0"><span class="__cf_email__" data-cfemail="c0a5a5f3f2f1f0f2f0f980a5a5eea9a9b4a4eea1a3eea9ae">[email&#160;protected]</span></a> &amp;
+Member &amp; 1<br />
+&amp; Shashank Mahawar &amp; <a href="/cdn-cgi/l/email-protection#4227277370737373727a0227276c2b2b36266c23216c2b2c"><span class="__cf_email__" data-cfemail="91f4f4a0a3a0a0a0a1a9d1f4f4bff8f8e5f5bff0f2bff8ff">[email&#160;protected]</span></a> &amp;
+Member &amp; 1<br />
+&amp; Anirban Singha &amp; <a href="/cdn-cgi/l/email-protection#cbaeaef8f9fafbfcfaf98baeaee5a2a2bfafe5aaa8e5a2a5"><span class="__cf_email__" data-cfemail="046161373635343335364461612a6d6d70602a65672a6d6a">[email&#160;protected]</span></a> &amp;
+Member &amp; 1<br />
+&amp; Hardik Varshney &amp; <a href="/cdn-cgi/l/email-protection#284d4d191a19181b101b684d4d0641415c4c06494b064146"><span class="__cf_email__" data-cfemail="45202074777475767d760520206b2c2c31216b24266b2c2b">[email&#160;protected]</span></a> &amp;
+Activity Coordinator &amp; 1<br />
+&amp; Saumya Srivastava &amp; <a href="/cdn-cgi/l/email-protection#224747131013121416166247470c4b4b56460c43410c4b4c"><span class="__cf_email__" data-cfemail="77121246454647414343371212591e1e0313591614591e19">[email&#160;protected]</span></a> &amp;
+Member &amp; 1<br />
+&amp; Siddharth Gupta &amp; <a href="/cdn-cgi/l/email-protection#c9acacf8fbf8f9fffbfe89acace7a0a0bdade7a8aae7a0a7"><span class="__cf_email__" data-cfemail="98fdfda9aaa9a8aeaaafd8fdfdb6f1f1ecfcb6f9fbb6f1f6">[email&#160;protected]</span></a> &amp;
+Member &amp; 1<br />
+&amp; Shreyash Bhilwade &amp; <a href="/cdn-cgi/l/email-protection#aacfcf99989b9a9b9d92eacfcf84c3c3dece84cbc984c3c4"><span class="__cf_email__" data-cfemail="f89d9dcbcac9c8c9cfc0b89d9dd691918c9cd6999bd69196">[email&#160;protected]</span></a> &amp;
+Member &amp; 1<br />
+&amp; Sumit Sharma &amp; <a href="/cdn-cgi/l/email-protection#0c61783d3e3d3c3e3a384c616d78647f2265657868226d6f226562"><span class="__cf_email__" data-cfemail="e48990d5d6d5d4d6d2d0a48985908c97ca8d8d9080ca8587ca8d8a">[email&#160;protected]</span></a>
+&amp; Member &amp; 1<br />
+&amp; Shreyansh Jain &amp; <a href="/cdn-cgi/l/email-protection#a2c7c793909392949095e2c7c78ccbcbd6c68cc3c18ccbcc"><span class="__cf_email__" data-cfemail="fa9f9fcbc8cbcaccc8cdba9f9fd493938e9ed49b99d49394">[email&#160;protected]</span></a> &amp;
+Member &amp; 1<br />
+&amp; Deependra Patel &amp; <a href="/cdn-cgi/l/email-protection#5336366061626361646b1336367d3a3a27377d32307d3a3d"><span class="__cf_email__" data-cfemail="5a3f3f69686b6a686d621a3f3f7433332e3e743b39743334">[email&#160;protected]</span></a> &amp;
+Member &amp; 1<br />
+&amp; Abhinav Kumar &amp; <a href="/cdn-cgi/l/email-protection#325f4603000302000703725f53465a411c5b5b46561c53511c5b5c"><span class="__cf_email__" data-cfemail="2e435a1f1c1f1e1c1b1f6e434f5a465d0047475a4a004f4d004740">[email&#160;protected]</span></a>
+&amp; Member &amp; 1<br />
+&amp; Kumar Arjun &amp; <a href="/cdn-cgi/l/email-protection#1f726b2e2d2e2f2d2c2d5f727e6b776c3176766b7b317e7c317671"><span class="__cf_email__" data-cfemail="14796025262524262726547975607c673a7d7d60703a75773a7d7a">[email&#160;protected]</span></a>
+&amp; Member &amp; 1<br />
+&amp; Jishnu Singh &amp; <a href="/cdn-cgi/l/email-protection#94f1f1a5a6a5a4a2a6a0d4f1f1bafdfde0f0baf5f7bafdfa"><span class="__cf_email__" data-cfemail="acc9c99d9e9d9c9a9e98ecc9c982c5c5d8c882cdcf82c5c2">[email&#160;protected]</span></a> &amp;
+Member &amp; 1<br />
+&amp; Shresth Ojha &amp; <a href="/cdn-cgi/l/email-protection#016464323330313837384164642f686875652f60622f686f"><span class="__cf_email__" data-cfemail="81e4e4b2b3b0b1b8b7b8c1e4e4afe8e8f5e5afe0e2afe8ef">[email&#160;protected]</span></a> &amp;
+Member &amp; 1<br />
+&amp; Shivam Jhanwar &amp; <a href="/cdn-cgi/l/email-protection#f29797c3c0c3c2c4c0c7b29797dc9b9b8696dc9391dc9b9c"><span class="__cf_email__" data-cfemail="07626236353637313532476262296e6e7363296664296e69">[email&#160;protected]</span></a> &amp;
+Member &amp; 1<br />
+&amp; Adnaan Mansoor &amp; <a href="/cdn-cgi/l/email-protection#82e7e7b3b0b3b2b4b4b4c2e7e7acebebf6e6ace3e1acebec"><span class="__cf_email__" data-cfemail="3b5e5e0a090a0b0d0d0d7b5e5e1552524f5f155a58155255">[email&#160;protected]</span></a> &amp;
+Member &amp; 1<br />
+&amp; Bhaira Ram Gat &amp; <a href="/cdn-cgi/l/email-protection#86e3e3b5b4b7b6b1b4b0c6e3e3a8efeff2e2a8e7e5a8efe8"><span class="__cf_email__" data-cfemail="6e0b0b5d5c5f5e595c582e0b0b4007071a0a400f0d400700">[email&#160;protected]</span></a> &amp;
+Member &amp; 1<br />
+&amp; Nandini Choudhary &amp; <a href="/cdn-cgi/l/email-protection#e18484d2d3d0d1d6d0d7a18484cf88889585cf8082cf888f"><span class="__cf_email__" data-cfemail="abcece98999a9b9c9a9debcece85c2c2dfcf85cac885c2c5">[email&#160;protected]</span></a> &amp;
+Activity Coordinator &amp; 1<br />
+&amp; Shouryan Singh &amp; <a href="/cdn-cgi/l/email-protection#2b465f1d191a1b121f186b464a5f43580542425f4f054a48054245"><span class="__cf_email__" data-cfemail="533e27656162636a6760133e32273b207d3a3a27377d32307d3a3d">[email&#160;protected]</span></a>
+&amp; Member &amp; 1<br />
+&amp; Kartik Kumar Bansiwal &amp; <a href="/cdn-cgi/l/email-protection#d1b4b4e2e3e0e1e6e5e291b4b4ffb8b8a5b5ffb0b2ffb8bf"><span class="__cf_email__" data-cfemail="b8dddd8b8a89888f8c8bf8dddd96d1d1ccdc96d9db96d1d6">[email&#160;protected]</span></a> &amp;
+Member &amp; 1<br />
+&amp; Gouri Nanda T R &amp; <a href="/cdn-cgi/l/email-protection#83eef7b5b1b2b3bab5b3c3eee2f7ebf0adeaeaf7e7ade2e0adeaed"><span class="__cf_email__" data-cfemail="c7aab3f1f5f6f7fef1f787aaa6b3afb4e9aeaeb3a3e9a6a4e9aea9">[email&#160;protected]</span></a>
+&amp; Member &amp; 1<br />
+&amp; Siddhant Raj &amp; <a href="/cdn-cgi/l/email-protection#38554c090a0908010b0a7855594c504b1651514c5c16595b165156"><span class="__cf_email__" data-cfemail="1c71682d2e2d2c252f2e5c717d68746f3275756878327d7f327572">[email&#160;protected]</span></a>
+&amp; Member &amp; 1<br />
+&amp; Shreysh Verma &amp; <a href="/cdn-cgi/l/email-protection#402525737271707774720025256e292934246e21236e292e"><span class="__cf_email__" data-cfemail="0f6a6a3c3d3e3f383b3d4f6a6a2166667b6b216e6c216661">[email&#160;protected]</span></a> &amp;
+Member &amp; 1<br />
+&amp; Kashish Kumawat &amp; <a href="/cdn-cgi/l/email-protection#d3b6b6e0e1e2e3e4e0ea93b6b6fdbabaa7b7fdb2b0fdbabd"><span class="__cf_email__" data-cfemail="492c2c7a7b78797e7a70092c2c6720203d2d67282a672027">[email&#160;protected]</span></a> &amp;
+Member &amp; 1<br />
+&amp; Anjali Pande &amp; <a href="/cdn-cgi/l/email-protection#80e5e5b3b2b1b0b7b3b7c0e5e5aee9e9f4e4aee1e3aee9ee"><span class="__cf_email__" data-cfemail="fd9898cecfcccdcacecabd9898d394948999d39c9ed39493">[email&#160;protected]</span></a> &amp;
+Member &amp; 1<br />
+&amp; Aaradhya Singh &amp; <a href="/cdn-cgi/l/email-protection#a3c6c690919293949095e3c6c68dcacad7c78dc2c08dcacd"><span class="__cf_email__" data-cfemail="abcece98999a9b9c989debcece85c2c2dfcf85cac885c2c5">[email&#160;protected]</span></a> &amp;
+Member &amp; 1<br />
+&amp; Ishav Singla &amp; <a href="/cdn-cgi/l/email-protection#39544d080b08090101007954584d514a1750504d5d17585a175057"><span class="__cf_email__" data-cfemail="84e9f0b5b6b5b4bcbcbdc4e9e5f0ecf7aaededf0e0aae5e7aaedea">[email&#160;protected]</span></a>
+&amp; Member &amp; 1<br />
+&amp; Gajendra Meena &amp; <a href="/cdn-cgi/l/email-protection#2f4a4a1c1d1e1f181a1f6f4a4a0146465b4b014e4c014641"><span class="__cf_email__" data-cfemail="92f7f7a1a0a3a2a5a7a2d2f7f7bcfbfbe6f6bcf3f1bcfbfc">[email&#160;protected]</span></a> &amp;
+Member &amp; 1<br />
+&amp; Yogendra Kumar &amp; <a href="/cdn-cgi/l/email-protection#84e1e1b5b6b5b4b5b3b4c4e1e1aaededf0e0aae5e7aaedea"><span class="__cf_email__" data-cfemail="412424707370717076710124246f282835256f20226f282f">[email&#160;protected]</span></a> &amp;
+Member &amp; 1<br />
+&amp; Vishal Gupta &amp; <a href="/cdn-cgi/l/email-protection#553821636764656c6060153834213d267b3c3c21317b34367b3c3b"><span class="__cf_email__" data-cfemail="6e031a585c5f5e575b5b2e030f1a061d4007071a0a400f0d400700">[email&#160;protected]</span></a>
+&amp; Member &amp; 1<br />
+&amp; Srijan Singh &amp; <a href="/cdn-cgi/l/email-protection#422727737073727475770227276c2b2b36266c23216c2b2c"><span class="__cf_email__" data-cfemail="92f7f7a3a0a3a2a4a5a7d2f7f7bcfbfbe6f6bcf3f1bcfbfc">[email&#160;protected]</span></a> &amp;
+Member &amp; 1<br />
+&amp; Nandini Singh &amp; <a href="/cdn-cgi/l/email-protection#5e3b3b6d6c6f6e696a691e3b3b7037372a3a703f3d703730"><span class="__cf_email__" data-cfemail="ddb8b8eeefecedeae9ea9db8b8f3b4b4a9b9f3bcbef3b4b3">[email&#160;protected]</span></a> &amp;
+Member &amp; 1<br />
+&amp; Himanshu Bilkhiwal &amp; <a href="/cdn-cgi/l/email-protection#0b6e6e38393a3b3c39334b6e6e2562627f6f256a68256265"><span class="__cf_email__" data-cfemail="284d4d1b1a19181f1a10684d4d0641415c4c06494b064146">[email&#160;protected]</span></a> &amp;
+Member &amp; 1<br />
+&amp; Harshit Gupta &amp; <a href="/cdn-cgi/l/email-protection#096c6c3a3b38393e3b3b496c6c2760607d6d27686a276067"><span class="__cf_email__" data-cfemail="82e7e7b1b0b3b2b5b0b0c2e7e7acebebf6e6ace3e1acebec">[email&#160;protected]</span></a> &amp;
+Member &amp; 1<br />
+&amp; Amitesh Gupta &amp; <a href="/cdn-cgi/l/email-protection#3e5b5b0d0c0f0e090c0a7e5b5b1057574a5a105f5d105750"><span class="__cf_email__" data-cfemail="a2c7c791909392959096e2c7c78ccbcbd6c68cc3c18ccbcc">[email&#160;protected]</span></a> &amp;
+Member &amp; 1<br />
+&amp; Nishant Yadav &amp; <a href="/cdn-cgi/l/email-protection#701d0441424140494141301d110418035e191904145e11135e191e"><span class="__cf_email__" data-cfemail="6b061f5a595a5b525a5a2b060a1f03184502021f0f450a08450205">[email&#160;protected]</span></a>
+&amp; Member &amp; 1<br />
+&amp; Aman Yadav &amp; <a href="/cdn-cgi/l/email-protection#8aefefb9b8bbbabdb9becaefefa4e3e3feeea4ebe9a4e3e4"><span class="__cf_email__" data-cfemail="3e5b5b0d0c0f0e090d0a7e5b5b1057574a5a105f5d105750">[email&#160;protected]</span></a> &amp;
+Member &amp; 1<br />
+&amp; Tarush Rajawat &amp; <a href="/cdn-cgi/l/email-protection#f39696c0c1c2c3c4c3cbb39696dd9a9a8797dd9290dd9a9d"><span class="__cf_email__" data-cfemail="c0a5a5f3f2f1f0f7f0f880a5a5eea9a9b4a4eea1a3eea9ae">[email&#160;protected]</span></a> &amp;
+Member &amp; 1<br />
+&amp; Utkarsh Pal &amp; <a href="/cdn-cgi/l/email-protection#9df0e9abafacada4a8a9ddf0fce9f5eeb3f4f4e9f9b3fcfeb3f4f3"><span class="__cf_email__" data-cfemail="8fe2fbb9bdbebfb6babbcfe2eefbe7fca1e6e6fbeba1eeeca1e6e1">[email&#160;protected]</span></a>
+&amp; Member &amp; 1<br />
+&amp; Agniv Nath &amp; <a href="/cdn-cgi/l/email-protection#3b5e5e08090a0b0c090c7b5e5e1552524f5f155a58155255"><span class="__cf_email__" data-cfemail="8feaeabcbdbebfb8bdb8cfeaeaa1e6e6fbeba1eeeca1e6e1">[email&#160;protected]</span></a> &amp;
+Member &amp; 1<br />
+&amp; Aarish Tickoo &amp; <a href="/cdn-cgi/l/email-protection#bdd8d88e8f8c8d8a8d8bfdd8d893d4d4c9d993dcde93d4d3"><span class="__cf_email__" data-cfemail="06636335343736313630466363286f6f7262286765286f68">[email&#160;protected]</span></a> &amp;
+Member &amp; 1<br />
+&amp; Rishank Aggarwal &amp; <a href="/cdn-cgi/l/email-protection#5d30296c6f6c6d65646a1d303c29352e7334342939733c3e733433"><span class="__cf_email__" data-cfemail="5f322b6e6d6e6f6766681f323e2b372c7136362b3b713e3c713631">[email&#160;protected]</span></a>
+&amp; Member &amp; 1<br />
+&amp; Abhyudaia Krishan &amp; <a href="/cdn-cgi/l/email-protection#68051c5e5a5958515e5b2805091c001b4601011c0c46090b460106"><span class="__cf_email__" data-cfemail="d9b4adefebe8e9e0efea99b4b8adb1aaf7b0b0adbdf7b8baf7b0b7">[email&#160;protected]</span></a>
+&amp; Member &amp; 1<br />
+&amp; Vedant Verma &amp; <a href="/cdn-cgi/l/email-protection#d0b5b5e1e2e1e0e1e5e790b5b5feb9b9a4b4feb1b3feb9be"><span class="__cf_email__" data-cfemail="a4c1c195969594959193e4c1c18acdcdd0c08ac5c78acdca">[email&#160;protected]</span></a> &amp;
+Member &amp; 1<br />
+&amp; Riju Bindua &amp; <a href="/cdn-cgi/l/email-protection#305d4401020100090003705d514458431e595944541e51531e595e"><span class="__cf_email__" data-cfemail="553821646764656c6566153834213d267b3c3c21317b34367b3c3b">[email&#160;protected]</span></a>
+&amp; Member &amp; 1<br />
+</p>
+</div>
+<h1 id="mind-map">Mind Map</h1>
+<div class="sidewaysfigure">
+
+</div>
+<h1 id="project-management-details">Project Management Details</h1>
+<h2 id="gantt-chart">Gantt Chart</h2>
+<div class="center">
+<figure>
+<img src="../Images/Gantt Chart 2_1.jpg" id="fig:ganttchart"
+alt="GANTT Chart" />
+<figcaption aria-hidden="true">GANTT Chart</figcaption>
+</figure>
+</div>
+<h2 id="network-chart">Network Chart</h2>
+<figure>
+<img src="../Images/NetworkChart_1.jpg" id="fig:networkchart" alt="Network Chart" />
+<figcaption aria-hidden="true">Network Chart</figcaption>
+</figure>
+<h2 id="rbs">RBS</h2>
+<figure>
+<img src="../Images/RBS_1.jpg" id="fig:rbs" alt="Resource Breakdown Structure" />
+<figcaption aria-hidden="true">Resource Breakdown Structure</figcaption>
+</figure>
+<h2 id="wbs">WBS</h2>
+<figure>
+<img src="../Images/wbs1_1.jpg" id="fig:wbs"
+alt="Work Breakdown Structure" />
+<figcaption aria-hidden="true">Work Breakdown Structure</figcaption>
+</figure>
+<h1 id="motivation">Motivation</h1>
+<p>Post-manufacturing, uncolored cloth needs cleaning to be rid of
+stains accidentally acquired during the manufacturing process. We have
+developed a machine for semi-industrial (small industry/home based
+entrepreneurs) / industrial settings which efficiently cleans, dries,
+and delivers cloth with a 45 minute cleaning cycle which can be packaged
+right away without further drying.</p>
+<h1 id="requirements">Requirements</h1>
+<h2 id="problem-statement">Problem Statement</h2>
+<div class="center">
+<p><strong>“Design and Manufacture a machine to clean manufacturing
+stains off an unbleached cotton cloth ”</strong></p>
+</div>
+<h2 id="input-requirements">Input Requirements</h2>
+<h3 id="cloth-details">Cloth Details</h3>
+<ul>
+<li><p>The cloth being cleaned is just-manufactured, uncolored cotton
+cloth, for general usage. The thickness is 1-ply, with a <span
+data-acronym-label="thread count"
+data-acronym-form="singular+short">thread count</span> of 400, and of
+<span data-acronym-label="denier"
+data-acronym-form="singular+short">denier</span> 60 <span
+data-acronym-label="opaqueness"
+data-acronym-form="singular+short">opaqueness</span>.</p></li>
+<li><p>The dimensions of the cloth to be cleaned are a maximum of 10 m
+length and 2m width or a continuous roll of 2 m width.</p></li>
+<li><p>The cloth, if uncut, needs to be cut to 10 m<span
+class="math inline">\(\times\)</span>2 m in size.</p></li>
+<li><p>The cloth has mostly oil-based stains, to begin with, naturally
+imbued during the manufacturing process.</p></li>
+</ul>
+<h3 id="other-inputs">Other inputs</h3>
+<ul>
+<li><p>The machine works with pressured water available at an ambient
+temperature from a 35 m overhead tank of capacity 50 L on-site.</p></li>
+<li><p>The machine works with water of <span
+class="math inline">\(\SI{80}{\milli\gram\per\liter}\)</span> <span
+class="math inline">\(CaCO_3\)</span> equivalent <span
+data-acronym-label="hardness"
+data-acronym-form="singular+short">hardness</span>.</p></li>
+<li><p><span data-acronym-label="Expendable materials"
+data-acronym-form="singular+short">Expendable materials</span> like
+detergents, soaps, etc are to be treated as a running cost, and paid for
+by the client after installation.</p></li>
+</ul>
+<h3 id="mode-of-input">Mode of Input</h3>
+<ul>
+<li><p>The machine cleans in batches of 11 kg dry weight per
+batch.</p></li>
+<li><p>Only a single program for general washing is required.</p></li>
+<li><p>The machine is required to have the capability to sequentially
+process multiple batches prepared beforehand by the client.</p></li>
+</ul>
+<h2 id="output-requirements">Output Requirements</h2>
+<ul>
+<li><p>The machine is required to both wash and dry the cloth.</p></li>
+<li><p>The 10 m x 2 m output cloth needs to be rolled.</p></li>
+<li><p>The output should be bone-dry.</p></li>
+</ul>
+<h2 id="power-requirements">Power Requirements</h2>
+<ul>
+<li><p>The machine must be compatible with 220 V AC 1-<span
+class="math inline">\(\Phi\)</span> (desirable) and 440 V AC 3-<span
+class="math inline">\(\Phi\)</span> power drawing a maximum current of
+15 A.</p></li>
+<li><p>The machine must be able to be connected to plug points up to
+20 m away.</p></li>
+</ul>
+<h2 id="environmental-requirements">Environmental Requirements</h2>
+<ul>
+<li><p>The machine must use as low an amount of resources(water,
+electricity) as possible, and comply with <span
+data-acronym-label="CPCB Regulations"
+data-acronym-form="singular+short">CPCB Regulations</span>.</p></li>
+</ul>
+<h2 id="site-demanded-requirements">Site-Demanded Requirements</h2>
+<ul>
+<li><p>The machine is designed to be used at <span
+data-acronym-label="semi-industrial sites"
+data-acronym-form="singular+short">semi-industrial
+sites</span>.</p></li>
+<li><p>During its operation, the machine must not exceed a noise level
+of 70 db.</p></li>
+<li><p>The machine is desired to be disassembleable and re-installable
+on request.</p></li>
+</ul>
+<h2 id="structural-requirements">Structural Requirements</h2>
+<ul>
+<li><p>The machine must be of maximum dimensions 25 m<span
+class="math inline">\(\times\)</span>40 m<span
+class="math inline">\(\times\)</span>60 m, designed to be installed in
+an industrial-size enclosure, or an open courtyard.</p></li>
+</ul>
+<h2 id="time-requirements">Time Requirements</h2>
+<h3 id="operational-time">Operational Time</h3>
+<ul>
+<li><p>The maximum time to wash and dry a batch must be under 45
+minutes.</p></li>
+</ul>
+<h1 id="specifications">Specifications</h1>
+<h2 id="machine-block-diagram">Machine Block Diagram</h2>
+<p>= [draw, rectangle, minimum height=4.5em, text width=5em, text
+centered, font=] =
+[thick,-<span>Stealth[length=3mm,width=2mm]</span>]</p>
+<h2 id="solvent-chamber">Solvent Chamber</h2>
+<h3 id="energy-specifications">Energy Specifications</h3>
+<ul>
+<li><p>220 V High Pressure Pump.</p></li>
+</ul>
+<h3 id="space-specifications">Space Specifications</h3>
+<ul>
+<li><p>Solvent tank - 0.5 m<span
+class="math inline">\(\times\)</span>2.1 m<span
+class="math inline">\(\times\)</span>2.2 m.</p></li>
+<li><p>detergent height - 0.1 m</p></li>
+<li><p>Volume - 105 L of detergent to be used.</p></li>
+</ul>
+<h3 id="power-specifications">Power Specifications</h3>
+<ul>
+<li><p>Power required for each pump: 2.7 kW.</p></li>
+</ul>
+<h3 id="cost-specifications">Cost Specifications</h3>
+<ul>
+<li><p>A waterproof container.</p></li>
+<li><p>7<span class="math inline">\(\times\)</span>pulleys .</p></li>
+<li><p>2<span class="math inline">\(\times\)</span>Nylon Brushes
+.</p></li>
+<li><p>Detergent Powder at Rs<span
+class="math inline">\(\,150/\text{kg}\)</span>.</p></li>
+</ul>
+<h3 id="performance-specifications">Performance Specifications</h3>
+<ul>
+<li><p>We have assumed standard conditions with a 52 m cloth(11 kg
+weight) being washed in 40 min.</p></li>
+<li><p>At any given time, 52 m of cloth is in the machine.</p></li>
+<li><p>Considering that 13 m will be wet due to detergent, resulting in
+a 0.5 kg weight increase for each meter, the total weight addition is
+6.5 kg. <span class="citation" data-cites="kane_evaluation_2012"></span>
+<span class="citation" data-cites="eduok_effect_2021"></span></p></li>
+</ul>
+<h3 id="man-power-specifications">Man Power Specifications</h3>
+<h3 id="milestone-specifications">Milestone Specifications</h3>
+<h2 id="pressure-washing-chamber">Pressure Washing Chamber</h2>
+<h3 id="energy-specifications-1">Energy Specifications</h3>
+<ul>
+<li><p>220 V High Pressure Pump.</p></li>
+</ul>
+<h3 id="space-specifications-1">Space Specifications</h3>
+<ul>
+<li><p>Enclosure made of transparent material like fibreglass(not
+necessarily water-tight) with dimensions: 1 m<span
+class="math inline">\(\times\)</span>2 m.</p></li>
+<li><p>Tiles for supporting clothes during pressure washing: 2<span
+class="math inline">\(\times\)</span>(50 cm<span
+class="math inline">\(\times\)</span>2 m) (preferably slippery
+material)</p></li>
+<li><p>Pump dimensions: 30 cm <span
+class="math inline">\(\times\)</span>15 cm<span
+class="math inline">\(\times\)</span>10 cm</p></li>
+<li><p>Pipe dimensions: 0.25 inches(internal) - 1 inch(external)
+diameter</p></li>
+<li><p>Nozzle size: 2-5 inches</p></li>
+</ul>
+<h3 id="power-specifications-1">Power Specifications</h3>
+<ul>
+<li><p>Power required for each pump: 2.7 kW.</p></li>
+</ul>
+<h3 id="cost-specifications-1">Cost Specifications</h3>
+<ul>
+<li><p>2<span class="math inline">\(\times\)</span>Pumps = Rs 6000<span
+class="math inline">\(\times\)</span>2 = Rs 12000</p></li>
+<li><p>10<span class="math inline">\(\times\)</span>Nozzles</p></li>
+<li><p>8<span class="math inline">\(\times\)</span>221
+Connectors(Threaded Tees)</p></li>
+<li><p>Pipes at Rs 150/m: Exact cost to be decided after confirming the
+length required.</p></li>
+</ul>
+<h3 id="performance-specifications-1">Performance Specifications</h3>
+<ul>
+<li><p>Pressure rating for the pump: 250-270 bars.</p></li>
+<li><p>Pipes made of <span
+data-acronym-label="Polypropylene Random Copolymer"
+data-acronym-form="singular+short">Polypropylene Random Copolymer</span>
+with the working pressure of 250 bars.</p></li>
+<li><p>Flat fan nozzles with spray angle in the range <span
+class="math inline">\(75^\circ\)</span>-<span
+class="math inline">\(110^\circ\)</span> and pressure rating of 50
+bars.(Attachable to pipes of given dimensions)</p></li>
+<li><p>Pressure rating for the connectors: 250 bars <span
+class="citation"
+data-cites="noauthor_thermoplastic_nodate"></span></p></li>
+</ul>
+<h3 id="man-power-specifications-1">Man Power Specifications</h3>
+<h3 id="milestone-specifications-1">Milestone Specifications</h3>
+<h2 id="drying-chamber">Drying Chamber</h2>
+<h3 id="energy-specifications-2">Energy Specifications</h3>
+<ul>
+<li><p>220 V, 50 Hz 3 phase for the Industrial Burner.</p></li>
+<li><p>220 V Industrial Exhaust Fan.</p></li>
+</ul>
+<h3 id="space-specifications-2">Space Specifications</h3>
+<ul>
+<li><p>Thermal Chamber Dimensions: 3 m<span
+class="math inline">\(\times\)</span>3 m<span
+class="math inline">\(\times\)</span>3 m.</p></li>
+<li><p>Industrial Grade Burner Dimensions: 20 inch<span
+class="math inline">\(\times\)</span> 14 inch<span
+class="math inline">\(\times\)</span> 18 inch.</p></li>
+</ul>
+<h3 id="power-specifications-2">Power Specifications</h3>
+<ul>
+<li><p>Burner requires 300 kW for a three phase burner</p></li>
+<li><p>Exhaust Fan requiring 3 kW–9 kW, may be switched off at
+times</p></li>
+</ul>
+<h3 id="cost-specifications-2">Cost Specifications</h3>
+<ul>
+<li><p>2<span class="math inline">\(\times\)</span>Rollers/pulleys for
+mechanical squeezing =</p></li>
+<li><p>5<span class="math inline">\(\times\)</span>Rollers for the
+thermal chamber =</p></li>
+<li><p>2<span class="math inline">\(\times\)</span>Burner = Rs <span
+class="math inline">\(5500\times2\)</span> = Rs 11,000.</p></li>
+<li><p>Exhaust Fan = Rs 35000.</p></li>
+<li><p>Sensor Temperature and Humidity :- Rs <span
+class="math inline">\(2000 + 2000\)</span> = Rs 4000.</p></li>
+<li><p>Chamber made out of Scrap Metal :- Rs 70000 at Rs <span
+class="math inline">\(36/\text{kg}\)</span>.</p></li>
+<li><p>Aluminium Insulation sheet for the Scrap Metal :- Rs
+3600</p></li>
+<li><p><span data-acronym-label="Polyurethane Laminate"
+data-acronym-form="singular+short">Polyurethane Laminate</span> padding
+for the Mechanical Squeezers :- Rs 500 at Rs <span
+class="math inline">\(80/\text{meter}\)</span></p></li>
+</ul>
+<h3 id="performance-specifications-2">Performance Specifications</h3>
+<ul>
+<li><p>2 Rollers padded with Polyurethane Laminate to squeeze out the
+excess water and push the cloth forward to the thermal chamber.</p></li>
+<li><p>Maintaining the Thermal Chamber at 145 °C ideally and
+realistically 100 °C</p></li>
+<li><p>Passing the cloth in 5 layers over the burner using pulleys and
+rollers.</p></li>
+<li><p>For Proper drying we will be keeping the cloth in the thermal
+chamber for around 10 minutes.</p></li>
+<li><p>Using Temperature Sensor and Humidity Sensor to monitor the
+inside of the chamber and further regulate the conditions using an
+exhaust fan. <span class="citation"
+data-cites="dryden_chapter_1982"></span> <span class="citation"
+data-cites="noauthor_drying_nodate"></span> <span class="citation"
+data-cites="noauthor_dry_nodate"></span></p></li>
+</ul>
+<h3 id="man-power-specifications-2">Man Power Specifications</h3>
+<h3 id="milestone-specifications-2">Milestone Specifications</h3>
+<h2 id="cutting-section">Cutting Section</h2>
+<h3 id="energy-specifications-3">Energy Specifications</h3>
+<ul>
+<li><p>220 V, 60 Hz AC for the Handheld cutter, rated at 250 W,
+0.8 A.</p></li>
+</ul>
+<h3 id="space-specifications-3">Space Specifications</h3>
+<ul>
+<li><p>Clamp sizing specifications: 15 cm, and opens out to a width of
+10 cm</p></li>
+<li><p>Supporting table kept at an angle of 70 °, slightly wider than
+the width of the cloth, leading the cut cloth to a pile: Dimensions to
+be decided according to later design specifications.</p></li>
+<li><p>Handheld cutting tool specifications: Housing 19.1 cm<span
+class="math inline">\(\times\)</span>10.2 cm<span
+class="math inline">\(\times\)</span>26.2 cm, with a circular/octagonal
+blade of 100 mm width.</p></li>
+</ul>
+<h3 id="power-specifications-3">Power Specifications</h3>
+<ul>
+<li><p>The circular hand-held cutter(to be integrated into an automated
+mechanism) operates at 250 W.</p></li>
+<li><p>The clamp and cutter are operated using a synchronization
+circuit, which uses negligible power.</p></li>
+</ul>
+<h3 id="cost-specifications-3">Cost Specifications</h3>
+<ul>
+<li><p>Rs 5000 - Rs 10,000 for the cutter</p></li>
+<li><p>4 Clamps can be fabricated at nominal cost, operating similar to
+(larger) cloth drying pins.</p></li>
+</ul>
+<h3 id="performance-specifications-3">Performance Specifications</h3>
+<ul>
+<li><p>Cutting Capacity of Blade: Upto 27 mm thickness.</p></li>
+<li><p>Blade rotates at 1000-3500 RPM. <span class="citation"
+data-cites="noauthor_fabric_nodate"></span> <span class="citation"
+data-cites="noauthor_yj-d108_nodate"></span></p></li>
+</ul>
+<h3 id="man-power-specifications-3">Man Power Specifications</h3>
+<h3 id="milestone-specifications-3">Milestone Specifications</h3>
+<h1 id="appendix">Appendix</h1>
+<h2 id="document-id">Document ID</h2>
+<ul>
+<li><p>Document Type - Private Release</p></li>
+<li><p>Document Authorised by: Samarth Singla, Tribe Coordinator
+(2021MT60942)</p></li>
+<li><p>Publication Date: 13 January 2024</p></li>
+<li><p>Version Number 1.0</p></li>
+</ul>
+<h2 id="document-statistics">Document Statistics</h2>
+<ul>
+<li><p>Number of words = 1,587</p></li>
+<li><p>Number of Sentences = 121</p></li>
+<li><p>Number of Characters = 10,329</p></li>
+</ul>
+<h2 id="readability-indices">Readability Indices</h2>
+<table>
+<caption>Readability Indices</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong>Index</strong></th>
+<th style="text-align: center;"><strong>Value</strong></th>
+<th style="text-align: center;"><strong>Range</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Automated Readability Index</td>
+<td style="text-align: center;">15.7</td>
+<td style="text-align: center;">5-22</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Gunning-Fog Index</td>
+<td style="text-align: center;">7.68</td>
+<td style="text-align: center;">0-20</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Flesch Reading Ease</td>
+<td style="text-align: center;">82.8</td>
+<td style="text-align: center;">0-100</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Coleman Liau Index</td>
+<td style="text-align: center;">13.1</td>
+<td style="text-align: center;">0-17+</td>
+</tr>
+</tbody>
+</table>
+<h3 id="descriptions-of-the-various-indices">Descriptions of the various
+indices:</h3>
+<ul>
+<li><p><strong>Automated Readability Index:</strong> An index designed
+to gauge readability utilizing the ratios of letters per word and words
+per sentence in an English text. A value of 14-15 indicates a 7th grade
+reading level.</p></li>
+<li><p><strong>Gunning-Fog Index:</strong> An index estimating the years
+of formal English education required to comprehend an English text,
+based on the ratios of words per sentence, and the occurrence of complex
+words. A value of 8 indicates an 8th grade reading level.</p></li>
+<li><p><strong>Flesch Reading Ease:</strong> A score for the readability
+of a text, with higher scores being more readable. It is based on the
+word count per sentence and the syllable count per word. An index of
+80-90 indicates easy-to-read conversational English</p></li>
+<li><p><strong>Coleman Liau Index:</strong> An index for readability
+based on the average number of letters and sentences per 100 words,
+approximating the US Grade level required to understand a text. A CLI
+value of 13.1 suggests that the text is written at a level equivalent to
+a 13th-grade student</p></li>
+</ul>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>
